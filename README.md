@@ -9,6 +9,7 @@ I hope that by the end of this study session, I will have an runnable war.
 ## Usage
 
 `lein compile`
+
 `lein run`
 
 ## License
