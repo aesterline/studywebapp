@@ -1,6 +1,6 @@
 (def jetty-version "8.0.3.v20111011")
 
-(defproject firstweb "1.0.0-SNAPSHOT"
+(defproject studywebapp "1.0.0-SNAPSHOT"
   :description "web project using clojure and jetty"
   :java-source-path "src/main/java" 
   :java-fork true 
