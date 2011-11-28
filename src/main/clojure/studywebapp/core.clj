@@ -4,6 +4,13 @@
                                HttpServletRequest
                                HttpServletResponse)))
 
+(defn handle
+  [context]
+  (with-open [request (.getRequest context)
+              writer (.. context (getResponse) (getWriter))]
+    (.print writer (.isAsyncStarted request)))
+  (.complete context))
+
 (gen-class
  :name firstweb.core.FirstServlet
  :implements [javax.servlet.Servlet])
@@ -13,5 +20,4 @@
 
 (defn -service
   [this request response]
-  (with-open [writer (.getWriter response)]
-    (.print writer (.getMethod request))))
+  (handle (.startAsync request)))
