@@ -6,10 +6,10 @@
 
 (defn handle
   [context]
-  (with-open [request (.getRequest context)
-              writer (.. context (getResponse) (getWriter))]
-    (.print writer (.isAsyncStarted request)))
-  (.complete context))
+  (let [request (.getRequest context)]
+    (with-open [writer (.. context (getResponse) (getWriter))]
+      (.print writer (.isAsyncStarted request)))
+    (.complete context)))
 
 (gen-class
  :name firstweb.core.FirstServlet
@@ -17,7 +17,6 @@
 
 (defn -init [this servletconfig])
 (defn -destroy [this])
-
 (defn -service
   [this request response]
   (handle (.startAsync request)))
