@@ -7,7 +7,7 @@
   :javac-target "1.5"
   :source-path "src/main/clojure"
   :test-path "src/test/clojure"
-  :aot [studywebapp.core]
+  :aot [studywebapp.servlet]
   :main studywebapp.launch
   :dependencies [[org.clojure/clojure "1.3.0"]
                  [org.eclipse.jetty/jetty-server ~jetty-version]

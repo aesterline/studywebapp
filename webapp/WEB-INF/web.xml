@@ -8,7 +8,7 @@
 
     <servlet>
         <servlet-name>clojureServlet</servlet-name>
-        <servlet-class>firstweb.core.FirstServlet</servlet-class>
+        <servlet-class>studywebapp.servlet.DispatcherServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
